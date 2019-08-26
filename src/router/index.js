@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router' // Router.1.1 导入路由包
-import HelloWorld from '@/components/HelloWorld'
+// import HelloWorld from '@/components/HelloWorld'
 
 // 导入需要的路由组件
 import HomeContainer from '../components/tabbar/HomeContainer'
@@ -14,9 +14,8 @@ Vue.use(Router)
 export default new Router({
   routes: [ // 配置路由规则
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/',     
+      redirect: '/home'
     },
     {
       path: '/home',      

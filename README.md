@@ -40,3 +40,5 @@ npm run build --report
 2. 使用 vue-resource 的 this.$http.get 获取数据
 3. 获取到的数据要保存到 data 里面
 4. 使用v-for循环渲染每个item项
+
+## 改造九宫格
