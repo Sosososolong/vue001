@@ -1,7 +1,10 @@
 <template>
   <div id="app" class="app-container">
-     <mt-header fixed title="地表最强JS"></mt-header>     
-      <router-view></router-view>
+     <mt-header fixed title="地表最强JS"></mt-header>   
+      <!-- 让route-view内容切换的时候有个动画 -->
+      <transition>
+        <router-view></router-view>
+      </transition>  
       <!-- 底部TabBar区域 -->
       <nav class="mui-bar mui-bar-tab">
         <router-link class="mui-tab-item" to="/home">
@@ -45,6 +48,24 @@ export default {
 <style scoped>
 .app-container{
   padding-top: 40px;
+  overflow-x: hidden;
 }
 
+/* 切换router-view区域时候的动画 */
+.v-enter{
+  opacity: 0;
+  transform: translate(100%);
+}
+.v-leave-to{
+  opacity: 0;
+  /* 让页面往左方消失 */
+  transform: translate(-100%);
+  /* 防止页面先往下跑在往左消失 */
+  position: absolute; 
+}
+
+.v-enter-active,
+.v-leave-active{
+  transition: all 0.5s ease;
+}
 </style>
